@@ -63,6 +63,8 @@
     <div>
       <button>Getter增加{{ count }}</button>
     </div>
+
+    <!--测试github使用情况-->
     <router-view/>
   </div>
 </template>
