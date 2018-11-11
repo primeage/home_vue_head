@@ -39,3 +39,5 @@ export default new Vuex.Store({
   actions, // 异步
   getters
 })
+
+// test git
