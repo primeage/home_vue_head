@@ -4,6 +4,18 @@
     <h2>Vue研究思考-每天学一点，不问结果</h2>
     <hr/>
 
+    <!--Vue Router 研究思考-->
+    <h4-title>Vue Router 研究思考</h4-title>
+    <!--使用router-link 定义点击后导航到哪个途径下-->
+    <header>
+      <router-link to="/home">Home</router-link>
+      <router-link to="/about">About</router-link>
+    </header>
+    <hr>
+    <!--对应的组件内容渲染到router-view中-->
+    <router-view/>
+    <hr>
+
     <!--插槽Slot研究-->
     <h3>插槽研究</h3>
     <!--1. 无插槽-->
@@ -64,7 +76,7 @@
       <button>Getter增加{{ count }}</button>
     </div>
 
-    <router-view/>
+    <!--<router-view/>-->
   </div>
 </template>
 
@@ -78,6 +90,7 @@ import SlotScopedApplied from './components/slot-example/slot-scoped-applied'
 
 export default {
   name: 'App',
+  // router, // 注入到根实例 2018.11.17
   components: {SlotScopedApplied, H4Title, SlotScoped, SlotNamed, SlotOne, ChildComponent},
   data: function () {
     return {
