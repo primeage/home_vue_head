@@ -2,6 +2,11 @@
   <div>
     <h1>home</h1>
     <p>{{ homeMsg }}</p>
+    <hr>
+    <!--创建news和message标签-->
+    <router-link to="/home/news">News</router-link>
+    <router-link to="/home/message">Message</router-link>
+    <router-view></router-view>
   </div>
 </template>
 

@@ -2,8 +2,11 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import App from './App'
+
 // import router from './router'
 import router from './router/router'
+// import nestedRouter from './router/nested-router'
+
 import store from './vuex/store'
 // import hi from './mixins/mixin_simple'
 import mixinConflict from './mixins/minxin_conflicting'
@@ -13,7 +16,7 @@ Vue.config.productionTip = false
 /* eslint-disable no-new */
 let vm = new Vue({
   el: '#app',
-  router: router,
+  router,
   // store是vuex
   store,
   // render: h => h(App),
