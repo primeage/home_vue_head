@@ -13,7 +13,10 @@
     </header>
     <hr>
     <!--对应的组件内容渲染到router-view中-->
-    <router-view/>
+    <!--保持路由组件alive-->
+    <keep-alive>
+      <router-view/>
+    </keep-alive>
     <hr>
 
     <!--插槽Slot研究-->

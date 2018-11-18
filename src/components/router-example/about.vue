@@ -2,6 +2,7 @@
   <div>
     <h1>about</h1>
     <p>{{ msg }}</p>
+    <input type="text">
   </div>
 </template>
 
