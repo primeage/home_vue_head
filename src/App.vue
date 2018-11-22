@@ -4,6 +4,14 @@
     <h2>Vue研究思考-每天学一点，不问结果</h2>
     <hr/>
 
+    <!--模板语法-->
+    <h4-title>模板语法</h4-title>
+    <a v-bind:href="url">v-bind</a>
+    <button v-on:click="doClick">one v-on</button>
+    <button @click="doClick">second v-on</button>
+
+    <a :href="url"> URL </a>
+
     <!--Vue Router 研究思考-->
     <h4-title>Vue Router 研究思考</h4-title>
     <!--使用router-link 定义点击后导航到哪个途径下-->
@@ -102,10 +110,14 @@ export default {
         {id: 2, name: '老二'},
         {id: 3, name: '老三'},
         {id: 4, name: '老四'}
-      ]
+      ],
+      url: 'http://www.baidu.com'
     }
   },
   methods: {
+    doClick: function () {
+      alert(' Do Click !')
+    },
     handleAddClick: function (n) {
       // 调用vuex中mutations的方法
       this.$store.commit('mutationsAddCount', n)
