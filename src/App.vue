@@ -4,6 +4,33 @@
     <h2>Vue研究思考-每天学一点，不问结果</h2>
     <hr/>
 
+    <h4Title>v-model</h4Title>
+    <div>
+      <input type="text" v-model.lazy="modelName1">
+      <pre>{{ modelName1 }}</pre>
+      <br>
+      <input type="text" v-model.trim="modelName2">
+      {{ modelName2 }}
+      <br>
+      <input type="text" v-model.number="modelName3">
+      {{ modelName3 }}
+    </div>
+
+    <h4Title>v-model</h4Title>
+    <div id="sex">
+      <label for="man">
+        男
+      </label>
+      <input type="checkbox" id="man" v-model="sex" value="男">
+      <label for="female">
+        女
+      </label>
+      <input type="checkbox" id="female" v-model="sex" value="女">
+      <br>
+      {{ sex }}
+
+    </div>
+
     <h4Title>v-for</h4Title>
     <ul id="ex-1">
       <li v-for="item of items" :key="item.id">
@@ -190,6 +217,9 @@ export default {
       ok: true,
       loginType: 'email',
       type: 'B',
+      modelName1: 'HAHA1',
+      modelName2: 'HAHA2',
+      modelName3: 'HAHA3',
       parentMessage: 'Parent',
       items: [
         {message: 'foo'},
@@ -199,7 +229,8 @@ export default {
         firstName: 'John',
         lastName: 'Doe',
         age: 30
-      }
+      },
+      sex: ['男']
     }
   },
   methods: {
