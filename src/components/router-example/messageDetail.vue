@@ -16,11 +16,7 @@ export default {
 </script>
 
 <ul>
-  <li><a href="http://www.baidu.com">dahaizhongguo </a></li>
-  <li><a href="http://www.baidu.com">dahaizhongguo http://www.baidu.com</a></li>
-  <li><a href="http://www.baidu.com">dahaizhongguo </a></li>
-  <li><a href="http://www.baidu.com">dahaizhongguo </a></li>
-  <li><a href="http://www.baidu.com">dahaizhongguo </a></li>
+  <li><a href="http://www.baidu.com">hongguo </a></li>
 </ul>
 <style scoped>
 

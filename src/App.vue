@@ -4,6 +4,79 @@
     <h2>Vue研究思考-每天学一点，不问结果</h2>
     <hr/>
 
+    <h4Title>v-for</h4Title>
+    <ul id="ex-1">
+      <li v-for="item of items" :key="item.id">
+        {{ item.message }}
+      </li>
+    </ul>
+
+    <ul id="ex-2">
+      <li v-for="(item, index) in items" :key="item.id">
+        {{ parentMessage }} - {{  index }} - {{ item.message }}
+      </li>
+    </ul>
+    <button id="pushBtn" @click="pushMessage()">Push Message</button>
+    <button id="popBtn" @click="popMessage()">Pop Message</button>
+    <button id="shiftBtn" @click="shiftMessage()">shift Message</button>
+    <button id="unshiftBtn" @click="unshiftMessage()">unshift Message</button>
+    <button id="spliceBtn" @click="spliceMessage()">splice Message</button>
+    <button id="sortBtn" @click="sortMessage()">sort Message</button>
+    <button id="reverseBtn" @click="reverseMessage()">reverse Message</button>
+
+    <h3>用 v-for 通过一个对象的属性来迭代</h3>
+    <ul class="class" id="v-for-object">
+      <li v-for="value in object" :key="value.key">
+        {{ value }}
+      </li>
+    </ul>
+    <h3>提供第二个的参数为键名</h3>
+    <ul class="class" id="v-for-object-key">
+      <li v-for="(value, key) in object" :key="key">
+       {{ key }} : {{ value }}
+      </li>
+    </ul>
+    <h3>第三个参数为索引</h3>
+    <ul class="class" id="v-for-object-index">
+      <li v-for="(value, key, index) in object" :key="key">
+       {{ index }} : {{ key }} : {{ value }}
+      </li>
+    </ul>
+
+    <h4Title>条件渲染</h4Title>
+    <h1 v-if="ok">Yes</h1>
+    <h1 v-else>No</h1>
+    <template v-if="ok">
+      <h1>Template v-if</h1>
+      <p>Para 1 </p>
+      <p>Para 2</p>
+    </template>
+
+    <h4Title>v-if  v-else v-else-if</h4Title>
+    <div v-if="type === 'A'">A</div>
+    <div v-else-if="type === 'B'">B</div>
+    <div v-else-if="type === 'C'">C</div>
+    <div v-else>Not A\B\C</div>
+
+    <h4Title>用key 管理可复用的元素</h4Title>
+    <template v-if="loginType === 'username'">
+      <label for="username">UserName</label>
+      <input type="text" id="username" placeholder="Enter your username">
+    </template>
+    <template v-else>
+      <label for="email">Email</label>
+      <input type="text" id="email" placeholder="Enter your Email address">
+    </template>
+
+    <h4-title>v-bind学习</h4-title>
+    <!--<a v-bind:href="url">点我</a>-->
+    <br>
+    <a :href="url" :class="kclass">Click Me
+    <br>
+    <!--<img v-bind:src="imageUrl">-->
+    </a>
+    <hr>
+
     <!--模板语法-->
     <h4-title>模板语法</h4-title>
     <a v-bind:href="url">v-bind</a>
@@ -111,10 +184,46 @@ export default {
         {id: 3, name: '老三'},
         {id: 4, name: '老四'}
       ],
-      url: 'http://www.baidu.com'
+      url: 'http://www.baidu.com',
+      imageUrl: 'https://www.baidu.com/img/baidu_jgylogo3.gif',
+      isActive: true,
+      ok: true,
+      loginType: 'email',
+      type: 'B',
+      parentMessage: 'Parent',
+      items: [
+        {message: 'foo'},
+        {message: 'bar'}
+      ],
+      object: {
+        firstName: 'John',
+        lastName: 'Doe',
+        age: 30
+      }
     }
   },
   methods: {
+    pushMessage: function () {
+      this.items.push({message: 'Bas'})
+    },
+    popMessage: function () {
+      this.items.pop()
+    },
+    shiftMessage: function () {
+      this.items.shift()
+    },
+    unshiftMessage: function () {
+      this.items.unshift('sxs')
+    },
+    spliceMessage: function () {
+      this.items.splice(1, 'haha')
+    },
+    sortMessage: function () {
+      this.items.sort()
+    },
+    reverseMessage: function () {
+      this.items.reverse()
+    },
     doClick: function () {
       alert(' Do Click !')
     },
@@ -137,6 +246,11 @@ export default {
   computed: {
     count: function () {
       return this.$store.getters.getterCount + 15
+    },
+    kclass: function () {
+      return {
+        active: this.isActive
+      }
     }
   }
 }
@@ -150,5 +264,10 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+.active {
+  background: red;
+  font-size: larger;
+  /*text-transform: lowercase;*/
 }
 </style>

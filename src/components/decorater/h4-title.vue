@@ -2,6 +2,7 @@
   <div class="h4-title">
     <h4 align="left" >
       <slot></slot>
+      <hr>
     </h4>
   </div>
 </template>
