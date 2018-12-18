@@ -3,7 +3,7 @@
     <!--<img src="./assets/logo.png">-->
     <h2>Vue研究思考-每天学一点，不问结果</h2>
     <hr/>
-
+    <mixinEx></mixinEx>
     <h4Title>v-model</h4Title>
     <div>
       <input type="text" v-model.lazy="modelName1">
@@ -198,11 +198,11 @@ import SlotNamed from './components/slot-example/slot-named'
 import SlotScoped from './components/slot-example/slot-scoped'
 import H4Title from './components/decorater/h4-title'
 import SlotScopedApplied from './components/slot-example/slot-scoped-applied'
-
+import mixinEx from './components/mixin-component/mixin_ex'
 export default {
   name: 'App',
   // router, // 注入到根实例 2018.11.17
-  components: {SlotScopedApplied, H4Title, SlotScoped, SlotNamed, SlotOne, ChildComponent},
+  components: {SlotScopedApplied, H4Title, SlotScoped, SlotNamed, SlotOne, ChildComponent, mixinEx},
   data: function () {
     return {
       nameList: [

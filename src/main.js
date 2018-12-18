@@ -9,7 +9,7 @@ import router from './router/router'
 
 import store from './vuex/store'
 // import hi from './mixins/mixin_simple'
-import mixinConflict from './mixins/minxin_conflicting'
+// import mixinConflict from './mixins/minxin_conflicting'
 
 Vue.config.productionTip = false
 
@@ -23,8 +23,7 @@ let vm = new Vue({
   components: { App },
   template: '<App/>',
   // 混入 mixin
-  // mixins: [hi],
-  mixins: [mixinConflict],
+  // mixins: [mixinP1],
   methods: {
     bar: function () {
       console.log('bar')
@@ -38,6 +37,6 @@ let vm = new Vue({
   }
 })
 
-vm.foo()
+// vm.foo()
 vm.bar()
 vm.conflicting()
