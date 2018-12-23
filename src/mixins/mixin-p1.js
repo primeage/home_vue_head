@@ -10,7 +10,7 @@ const mixinP1 = {
   },
   data: function () {
     return {
-      visible: true,
+      // visible: true,
       me: '我是P1 mixin'
     }
   }

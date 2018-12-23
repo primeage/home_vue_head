@@ -14,7 +14,7 @@ import store from './vuex/store'
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
-let vm = new Vue({
+new Vue({
   el: '#app',
   router,
   // store是vuex
@@ -36,7 +36,3 @@ let vm = new Vue({
     console.log('I\'m Vue in main.js')
   }
 })
-
-// vm.foo()
-vm.bar()
-vm.conflicting()

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <button @click="sayHi(record)">ex mixin</button>
+    <button @click="sayHi(me)">ex mixin</button>
     <div v-if="this.visible">Toggle显示</div>
   </div>
 </template>

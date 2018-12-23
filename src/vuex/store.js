@@ -3,8 +3,10 @@ import Vuex from 'vuex'
 
 Vue.use(Vuex)
 
+var busVM = new Vue()
 const state = {
-  count: 0
+  count: 0,
+  busVM: busVM
 }
 
 const mutations = {

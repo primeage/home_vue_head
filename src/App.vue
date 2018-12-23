@@ -3,10 +3,20 @@
     <!--<img src="./assets/logo.png">-->
     <h2>Vue研究思考-每天学一点，不问结果</h2>
     <hr/>
+
+    <h4Title>自定义事件</h4Title>
+    <young></young>
+    <old></old>
+    <br>
+    <hr>
+    <h4Title>mixin</h4Title>
     <mixinEx></mixinEx>
     <h4Title>v-model</h4Title>
     <div>
-      <input type="text" v-model.lazy="modelName1">
+      <label >
+        haha:
+        <input type="text" v-model.lazy="modelName1">
+      </label>
       <pre>{{ modelName1 }}</pre>
       <br>
       <input type="text" v-model.trim="modelName2">
@@ -199,10 +209,13 @@ import SlotScoped from './components/slot-example/slot-scoped'
 import H4Title from './components/decorater/h4-title'
 import SlotScopedApplied from './components/slot-example/slot-scoped-applied'
 import mixinEx from './components/mixin-component/mixin_ex'
+import young from './components/components-custom-events/young'
+import old from './components/components-custom-events/old'
+
 export default {
   name: 'App',
   // router, // 注入到根实例 2018.11.17
-  components: {SlotScopedApplied, H4Title, SlotScoped, SlotNamed, SlotOne, ChildComponent, mixinEx},
+  components: {SlotScopedApplied, H4Title, SlotScoped, SlotNamed, SlotOne, ChildComponent, mixinEx, young, old},
   data: function () {
     return {
       nameList: [
